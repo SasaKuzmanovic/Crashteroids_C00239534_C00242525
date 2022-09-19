@@ -36,6 +36,19 @@ public class TestSuite
     }
 
     [UnityTest]
+    public IEnumerator ShipMovesLeftOrRight()
+    {
+        Ship player = game.GetShip();
+
+        float initialpos = player.transform.position.x;
+
+        yield return new WaitForSeconds(0.1f);
+
+        Assert.AreNotEqual(player.transform.position.x, initialpos);
+    }
+
+
+    [UnityTest]
     public IEnumerator GameOverOccursOnAsteroidCollision()
     {
         GameObject asteroid = game.GetSpawner().SpawnAsteroid();
