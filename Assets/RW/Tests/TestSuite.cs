@@ -108,6 +108,26 @@ public class TestSuite
         yield return new WaitForSeconds(0.1f);
         // 2
         Assert.AreEqual(game.score, 1);
+        
     }
+
+
+    [UnityTest]
+    public IEnumerator scoreResetTest()
+    {
+        //1
+        game.score = 10;
+        game.NewGame();
+        //2
+
+        yield return new WaitForSeconds(0.1f);
+        Assert.AreEqual(game.score, 0);
+
+
+    }
+
+
+
+
 
 }
