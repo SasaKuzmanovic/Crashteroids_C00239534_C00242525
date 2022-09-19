@@ -36,11 +36,27 @@ public class TestSuite
     }
 
     [UnityTest]
-    public IEnumerator ShipMovesLeftOrRight()
+    public IEnumerator ShipMovesLeft()
     {
         Ship player = game.GetShip();
 
         float initialpos = player.transform.position.x;
+
+        player.MoveLeft();
+
+        yield return new WaitForSeconds(0.1f);
+
+        Assert.AreNotEqual(player.transform.position.x, initialpos);
+    }
+
+    [UnityTest]
+    public IEnumerator ShipMovesRight()
+    {
+        Ship player = game.GetShip();
+
+        float initialpos = player.transform.position.x;
+
+        player.MoveRight();
 
         yield return new WaitForSeconds(0.1f);
 
