@@ -45,7 +45,7 @@ public class Ship : MonoBehaviour
     [SerializeField]
     private GameObject laser;
     [SerializeField]
-    private Transform shotSpawn;
+    private Transform shotSpawn;;
 
     private float maxLeft = -8;
     private float maxRight = 8;
