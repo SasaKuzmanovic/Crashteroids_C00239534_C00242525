@@ -143,6 +143,16 @@ public class TestSuite
     }
 
     [UnityTest]
+    public IEnumerator ButtonTest()
+    {
+        float initialYpos = game.GetShip().transform.position.y;
+        game.GetShip().MoveUp();
+        yield return new WaitForSeconds(0.1f);
+
+        Assert.Less(initialYpos, game.GetShip().transform.position.y);
+    }
+
+    [UnityTest]
     public IEnumerator MoveUpTest()
     {
         float initialYpos = game.GetShip().transform.position.y;
