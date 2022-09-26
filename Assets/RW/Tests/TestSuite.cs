@@ -162,5 +162,15 @@ public class TestSuite
         Assert.Greater(initialYpos, game.GetShip().transform.position.y);
     }
 
+    [UnityTest]
+    public IEnumerator checkForBorderUp()
+    {
+        game.GetShip().moveToMax();
+        float initialYpos = game.GetShip().transform.position.y;
+        yield return new WaitForSeconds(0.1f);
+
+        Assert.AreEqual(initialYpos, game.GetShip().transform.position.y, 0.0001f);
+    }
+
 
 }

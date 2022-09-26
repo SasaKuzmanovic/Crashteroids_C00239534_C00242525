@@ -156,4 +156,9 @@ public class Ship : MonoBehaviour
         mesh.enabled = true;
         isDead = false;
     }
+
+    public void moveToMax()
+    {
+        transform.position = new Vector3(transform.position.x, maxUp, 0);
+    }
 }
